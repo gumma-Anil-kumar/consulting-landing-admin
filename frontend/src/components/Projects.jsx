@@ -54,7 +54,7 @@ const Projects = () => {
             >
               <div className="project-image-container">
                 <img
-                  src={`http://127.0.0.1:8000/${project.image}`}
+                  src={`${import.meta.env.VITE_API_BASE_URL}/${project.image}`}
                   alt={project.name}
                   className="project-image"
                 />

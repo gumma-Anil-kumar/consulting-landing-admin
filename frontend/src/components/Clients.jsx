@@ -21,7 +21,7 @@ const Clients = () => {
         {clients.map((client, index) => (
           <div className="client-card" key={index}>
             <img
-              src={`http://127.0.0.1:8000/${client.image}`}
+              src={`${import.meta.env.VITE_API_BASE_URL}/${client.image}`}
               alt={client.name}
             />
             <h4>{client.name}</h4>

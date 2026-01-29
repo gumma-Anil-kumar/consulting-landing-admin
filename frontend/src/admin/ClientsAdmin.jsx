@@ -42,7 +42,7 @@ const ClientsAdmin = () => {
       designation: client.designation,
       description: client.description,
     });
-    setImagePreview(`http://127.0.0.1:8000/${client.image}`);
+    setImagePreview(`${import.meta.env.VITE_API_BASE_URL}/${client.image}`);
     setImage(null);
   };
 
@@ -271,7 +271,7 @@ const ClientsAdmin = () => {
                   <p className="item-description">{client.description}</p>
                   {client.image && (
                     <img
-                      src={`http://127.0.0.1:8000/${client.image}`}
+                      src={`${import.meta.env.VITE_API_BASE_URL}/${client.image}`}
                       alt={client.name}
                       className="item-image"
                     />
