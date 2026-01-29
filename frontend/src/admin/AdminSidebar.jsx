@@ -3,11 +3,11 @@ import "./admin.css";
 
 const AdminSidebar = () => {
   const navItems = [
-    { path: "/admin", icon: "📊", label: "Dashboard" },
-    { path: "/admin/projects", icon: "🏗️", label: "Projects" },
-    { path: "/admin/clients", icon: "👥", label: "Clients" },
-    { path: "/admin/contacts", icon: "📞", label: "Contacts" },
-    { path: "/admin/newsletter", icon: "📧", label: "Newsletter" },
+    { path: "", icon: "📊", label: "Dashboard" },
+    { path: "projects", icon: "🏗️", label: "Projects" },
+    { path: "clients", icon: "👥", label: "Clients" },
+    { path: "contacts", icon: "📞", label: "Contacts" },
+    { path: "newsletter", icon: "📧", label: "Newsletter" },
   ];
 
   return (
@@ -24,8 +24,9 @@ const AdminSidebar = () => {
       <div className="admin-sidebar-nav">
         {navItems.map((item) => (
           <NavLink
-            key={item.path}
+            key={item.label}
             to={item.path}
+            end={item.path === ""}
             className={({ isActive }) =>
               `nav-item ${isActive ? "active" : ""}`
             }
@@ -36,10 +37,17 @@ const AdminSidebar = () => {
         ))}
       </div>
 
-      <div style={{ padding: "20px", borderTop: "1px solid rgba(255,255,255,0.1)", marginTop: "auto" }}>
+      <div
+        style={{
+          padding: "20px",
+          borderTop: "1px solid rgba(255,255,255,0.1)",
+          marginTop: "auto",
+        }}
+      >
         <div style={{ color: "#94a3b8", fontSize: "12px", marginBottom: "8px" }}>
           Logged in as: <strong style={{ color: "white" }}>Admin</strong>
         </div>
+
         <button
           className="btn btn-secondary"
           style={{ width: "100%", fontSize: "12px", padding: "8px" }}

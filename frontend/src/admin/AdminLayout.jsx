@@ -8,8 +8,8 @@ import NewsletterAdmin from "./NewsletterAdmin";
 import "./admin.css";
 
 const AdminLayout = () => {
-  // Check authentication
-  const isAuthenticated = localStorage.getItem("admin_token") || true; // Add your auth logic
+  // TEMP auth (ok for assignment)
+  const isAuthenticated = true;
 
   if (!isAuthenticated) {
     window.location.href = "/login";
@@ -19,13 +19,23 @@ const AdminLayout = () => {
   return (
     <div className="admin-container">
       <AdminSidebar />
+
       <div className="admin-content">
         <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/projects" element={<ProjectsAdmin />} />
-          <Route path="/clients" element={<ClientsAdmin />} />
-          <Route path="/contacts" element={<ContactsAdmin />} />
-          <Route path="/newsletter" element={<NewsletterAdmin />} />
+          {/* /admin */}
+          <Route index element={<Dashboard />} />
+
+          {/* /admin/projects */}
+          <Route path="projects" element={<ProjectsAdmin />} />
+
+          {/* /admin/clients */}
+          <Route path="clients" element={<ClientsAdmin />} />
+
+          {/* /admin/contacts */}
+          <Route path="contacts" element={<ContactsAdmin />} />
+
+          {/* /admin/newsletter */}
+          <Route path="newsletter" element={<NewsletterAdmin />} />
         </Routes>
       </div>
     </div>
