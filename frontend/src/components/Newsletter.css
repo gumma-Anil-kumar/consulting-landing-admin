@@ -1,0 +1,16 @@
+.newsletter {
+  background: #222;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.newsletter input {
+  padding: 10px;
+  width: 250px;
+}
+
+.newsletter button {
+  padding: 10px;
+  margin-left: 10px;
+}
